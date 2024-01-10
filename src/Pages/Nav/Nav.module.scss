@@ -7,14 +7,14 @@
     align-items: center;
     padding: 20px;
     filter: drop-shadow(0px 5px 8px #CF9407);
-    
-    nav{
+
+    nav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
     }
-    
+
     h3 {
         display: flex;
         background: -webkit-linear-gradient(rgb(188, 12, 241), rgb(212, 4, 4));
@@ -24,19 +24,19 @@
         align-items: center;
 
     }
-    
+
     ul {
-        
+
         display: flex;
         list-style-type: none;
     }
-    
+
     li {
         display: flex;
         flex-direction: row;
-        
+
     }
-    
+
     a {
         display: flex;
         text-decoration: none;
