@@ -3,7 +3,7 @@
     // flex-direction: column;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    width: 150px; // skal laves responsiv
+    width: 100%;
 
     .color {
         width: 100%;
