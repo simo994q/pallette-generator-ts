@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
 interface ColorContextInterface {
-    activePallette: Array<string> | null
+    activePallette: Array<string>
     setActivePallette: (pallette: Array<string>) => void
     userPallettes: Array<Array<string>>
     setUserPallettes: (userPallette: Array<Array<string>>, pallette: Array<string>) => void
