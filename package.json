@@ -24,6 +24,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "install": "^0.13.0",
     "Npm": "^3.0.0",
+    "react-router-dom": "^6.21.1",
     "sass": "^1.69.7",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
