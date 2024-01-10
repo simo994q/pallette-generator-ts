@@ -1,0 +1,26 @@
+.homepage {
+    
+    .headline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    h1 {
+        font-size: 5rem;
+        margin: 20px;
+        background: -webkit-linear-gradient(rgb(112, 0, 146), rgb(44, 192, 44));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+}
+
+.generateSave {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
