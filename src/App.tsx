@@ -1,9 +1,13 @@
+import ColorContextProvider from "./ColorContext"
+
 
 function App() {
 
   return (
     <>
-
+      <ColorContextProvider>
+      
+      </ColorContextProvider>
     </>
   )
 }
