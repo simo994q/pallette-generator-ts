@@ -1,11 +1,13 @@
-import { Button } from './Components/Button/Buttons.tsx'
+import ColorContextProvider from "./ColorContext"
 
 
 function App() {
 
   return (
     <>
-      <Button />
+      <ColorContextProvider>
+      
+      </ColorContextProvider>
     </>
   )
 }
