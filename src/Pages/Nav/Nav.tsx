@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom';
 import navStyle from './Nav.module.scss'
-
+import { Button } from '../../Components/Button/Buttons';
 
 export function Navigation() {
 
     return (
         <section className={navStyle.navigation}>
             <nav>
-                    <Link to='/'><li>Colorizer Pallete Generator</li></Link>
+                    <Link to='/'><h3>Colorizer Pallete Generator</h3></Link>
                 <ul>
-                    <Link to='/mypallettes'><li>My Palettes</li></Link>
+                    <Button/>
+                    <Link to='/mypallettes'><li><Button/></li></Link>
                 </ul>
             </nav>
         </section>
