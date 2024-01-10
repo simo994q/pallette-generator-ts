@@ -2,6 +2,12 @@ import style from './ColorCard.module.scss'
 
 
 const ColorCard = ({ color, copytext }: { color: string, copytext: boolean }) => {
+    
+    const handleCopy = () => {
+        navigator.clipboard.writeText(color)
+        alert("Copied the text: " + color);
+    }
+    
     return (
         <>
             <div className={style.wrapper}>
@@ -12,12 +18,12 @@ const ColorCard = ({ color, copytext }: { color: string, copytext: boolean }) =>
                         {color}
                     </div>
                     {copytext ?
-                        <button className={style.copyText}>
+                        <button onClick={() => handleCopy()} className={style.copyText}>
                             <p>copy</p>
                             <img src="clipboard.png" alt="Copy" />
                         </button>
                         :
-                        <button className={style.copyNoText}>
+                        <button onClick={() => handleCopy()} className={style.copyNoText}>
                             <img src="clipboard.png" alt="Copy" />
                         </button>
                     }
