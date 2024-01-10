@@ -4,13 +4,9 @@ export function Button({ children }: { children: React.ReactNode }) {
 
     return (
         <>
-            <button className={buttonsStyle.button}>sdlfjnsdfnsfns{children}</button>
-            <button className={buttonsStyle.button}>{children}</button>
-            <button className={buttonsStyle.button}>{children}</button>
-            <button className={buttonsStyle.button}>{children}</button>
-            <button className={buttonsStyle.button}>{children}</button>
-            <button className={buttonsStyle.button}>{children}</button>
-            <button className={buttonsStyle.button}>{children}</button>
+            <div className={buttonsStyle.moduleBorderWrap }>
+                <button className={buttonsStyle.button}>{children}</button>
+            </div>
         </>
     )
 }
