@@ -18,8 +18,8 @@ export function Homepage({ title }: { title: string }) {
                 <ColorCard color={'#ff03f2'} copytext={true} />
             </ColorGroup>
             <div className={homepageStyle.generateSave}>
-                <Button />
-                <Button />
+                <Button>Generate</Button>
+                <Button>Save</Button>
             </div>
         </section>
     )
