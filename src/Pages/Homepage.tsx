@@ -1,7 +1,8 @@
 import homepageStyle from '../Pages/Homepage.module.scss'
 import { Button } from "../Components/Button/Buttons"
-import ColorCard from '../Components/ColorCard/ColorCard'
-import ColorGroup from '../Components/ColorGroup/ColorGroup'
+import ColorCard from '../Components/ColorCardHome/ColorCardHome'
+import ColorGroup from '../Components/ColorGroupHome/ColorGroupHome'
+
 export function Homepage({ title }: { title: string }) {
 
 

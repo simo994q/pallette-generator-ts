@@ -1,5 +1,4 @@
-import style from './ColorCard.module.scss'
-
+import style from './ColorCardSaved.module.scss'
 
 const ColorCard = ({ color, copytext }: { color: string, copytext: boolean }) => {
     

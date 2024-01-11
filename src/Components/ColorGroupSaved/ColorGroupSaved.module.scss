@@ -1,0 +1,23 @@
+.wrapper {
+    
+    display: flex;
+    flex-direction: row;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    width: 100%;
+    justify-content: center;
+    gap: 4rem;
+
+}
+
+
+
+@media (max-width: 360px) {
+    .wrapper {
+        width: 10px;
+        gap: 1.5rem;
+
+    }
+
+ 
+}

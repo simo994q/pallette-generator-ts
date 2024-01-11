@@ -1,9 +1,39 @@
-.savedPallets{
+.savedPallets {
 
     padding: 50px;
 
-
-    hr{
-        margin: 50px;
+    hr {
+        // margin: 50px;
     }
+}
+
+.buttonsDownUnder {
+    display: none;
+}
+
+
+@media (max-width: 360px) {
+
+    hr {
+        display: none;
+    }
+
+
+    @media (max-width: 360px) {
+
+        .savedPallets{
+            padding: 5px;
+        }
+
+        .buttonsToTheSide {
+            display: none;
+        }
+
+
+        .buttonsDownUnder {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
 }
