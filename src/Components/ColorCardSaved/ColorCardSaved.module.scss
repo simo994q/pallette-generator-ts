@@ -13,7 +13,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        font-size: 0.8rem;
+        font-size: 1rem;
         color: #ffffff;
         align-items: center;
 
@@ -27,6 +27,7 @@
             align-items: center;
             color: #ffffff;
             padding: 4px;
+            font-size: 1rem;
 
             img {
                 height: 20px;
@@ -39,6 +40,11 @@
             border: none;
             cursor: pointer;
         }
+        .copyNoText {
+            img {
+                height: 20px;
+            }
+        }
     }
 }
 
@@ -47,6 +53,48 @@
         gap: 3rem;
 
     }
+}
 
- 
+@media (min-width: 600px) and (max-width: 768px) {
+    .wrapper {
+        .codeAndCopy {
+            font-size: 0.8rem;
+            .copyNoText {
+                font-size: 0.8rem;
+    
+                img {
+                    height: 18px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 450px) and (max-width: 600px) {
+    .wrapper {
+        .codeAndCopy {
+            font-size: 0.6rem;
+            .copyNoText {
+                font-size: 0.6rem;
+    
+                img {
+                    height: 16px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 450px) {
+    .wrapper {
+        .codeAndCopy {
+            font-size: 0.5rem;
+            .copyNoText {
+                font-size: 0.5rem;
+    
+                img {
+                    height: 14px;
+                }
+            }
+        }
+    }
 }

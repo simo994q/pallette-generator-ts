@@ -12,11 +12,11 @@ export function MyPallettes({ title }: { title: string }) {
             <section className={mypalletsStyle.savedPallets}>
 
                 <ColorGroup>
-                    <ColorCard color={'#ff03f2'} copytext={true} />
-                    <ColorCard color={'#ff03f2'} copytext={true} />
-                    <ColorCard color={'#ff03f2'} copytext={true} />
-                    <ColorCard color={'#ff03f2'} copytext={true} />
-                    <ColorCard color={'#ff03f2'} copytext={true} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
                     <div className={mypalletsStyle.buttonsToTheSide}>
                         <Button />
                         <Button />
@@ -28,11 +28,11 @@ export function MyPallettes({ title }: { title: string }) {
                 </div>
                 <hr />
                 <ColorGroup>
-                    <ColorCard color={'#ff03f2'} copytext={true} />
-                    <ColorCard color={'#ff03f2'} copytext={true} />
-                    <ColorCard color={'#ff03f2'} copytext={true} />
-                    <ColorCard color={'#ff03f2'} copytext={true} />
-                    <ColorCard color={'#ff03f2'} copytext={true} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
                     <div className={mypalletsStyle.buttonsToTheSide}>
                         <Button />
                         <Button />
@@ -44,11 +44,11 @@ export function MyPallettes({ title }: { title: string }) {
                 </div>
                 <hr />
                 <ColorGroup>
-                    <ColorCard color={'#ff03f2'} copytext={true} />
-                    <ColorCard color={'#ff03f2'} copytext={true} />
-                    <ColorCard color={'#ff03f2'} copytext={true} />
-                    <ColorCard color={'#ff03f2'} copytext={true} />
-                    <ColorCard color={'#ff03f2'} copytext={true} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
+                    <ColorCard color={'#ff03f2'} copytext={false} />
                     <div className={mypalletsStyle.buttonsToTheSide}>
                         <Button />
                         <Button />
