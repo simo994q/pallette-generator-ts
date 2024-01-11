@@ -27,8 +27,6 @@ const ColorContextProvider = ({ children }: { children: React.ReactNode }) => {
     const [userPallettes, setUserPallettes] = useState<Array<Array<string>>>([])
     const [generatedPallette, setGeneratedPallette] = useState<Array<string>>([])
 
-    console.log(userPallettes);
-
     return (
         <ColorContext.Provider value={{ activePallette, setActivePallette, userPallettes, setUserPallettes, generatedPallette, setGeneratedPallette }}>
             {children}
