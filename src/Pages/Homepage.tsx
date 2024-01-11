@@ -7,7 +7,6 @@ import { ColorContext } from '../ColorContext'
 
 export function Homepage({ title }: { title: string }) {
 
-    const { activePallette } = useContext(ColorContext)
     const { setActivePallette } = useContext(ColorContext)
 
     const { generatedPallette } = useContext(ColorContext)
@@ -54,18 +53,13 @@ export function Homepage({ title }: { title: string }) {
             </div>
             <ColorGroup>
                 {generatedPallette.length ?
-                    generatedPallette.map((color: string) => {
-                        return <ColorCard color={color} copytext={true} />
+                    generatedPallette.map((color: string, i: number) => {
+                        return <ColorCard color={color} copytext={true} key={i} />
                     }
                     )
                     :
-                    <div></div>
+                    <p className={homepageStyle.infoText}>Click generate to get new colors</p>
                 }
-                {/* <ColorCard color={'#ff03f2'} copytext={true} />
-                <ColorCard color={'#ff03f2'} copytext={true} />
-                <ColorCard color={'#ff03f2'} copytext={true} />
-                <ColorCard color={'#ff03f2'} copytext={true} />
-                <ColorCard color={'#ff03f2'} copytext={true} /> */}
             </ColorGroup>
             <div className={homepageStyle.generateSave}>
                 <Button onClick={() => fetchNewPallette()}>Generate</Button>
