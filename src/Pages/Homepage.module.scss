@@ -1,5 +1,5 @@
 .homepage {
-    
+    margin: 30px;
     .headline {
         display: flex;
         flex-direction: column;
@@ -30,3 +30,13 @@
     color: white;
     font-size: 0.8rem;
 }
+    // margin: 50px;
+
+
+@media (max-width: 360px) {
+
+    h1{
+        display: none;
+    }
+    
+ }

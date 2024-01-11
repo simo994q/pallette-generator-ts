@@ -1,9 +1,9 @@
 import homepageStyle from '../Pages/Homepage.module.scss'
 import { Button } from "../Components/Button/Buttons"
-import ColorCard from '../Components/ColorCard/ColorCard'
-import ColorGroup from '../Components/ColorGroup/ColorGroup'
 import { useContext, useEffect } from 'react'
 import { ColorContext } from '../ColorContext'
+import ColorCard from '../Components/ColorCardHome/ColorCardHome'
+import ColorGroup from '../Components/ColorGroupHome/ColorGroupHome'
 
 export function Homepage({ title }: { title: string }) {
 

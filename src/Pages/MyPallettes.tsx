@@ -1,7 +1,7 @@
 import mypalletsStyle from './Mypallettes.module.scss'
 import { Button } from "../Components/Button/Buttons"
-import ColorCard from '../Components/ColorCard/ColorCard'
-import ColorGroup from '../Components/ColorGroup/ColorGroup'
+import ColorCard from '../Components/ColorCardSaved/ColorCardSaved'
+import ColorGroup from '../Components/ColorGroupSaved/ColorGroupSaved'
 
 
 export function MyPallettes({ title }: { title: string }) {
@@ -17,11 +17,15 @@ export function MyPallettes({ title }: { title: string }) {
                     <ColorCard color={'#ff03f2'} copytext={true} />
                     <ColorCard color={'#ff03f2'} copytext={true} />
                     <ColorCard color={'#ff03f2'} copytext={true} />
-                    <div>
+                    <div className={mypalletsStyle.buttonsToTheSide}>
                         <Button />
                         <Button />
                     </div>
                 </ColorGroup>
+                <div className={mypalletsStyle.buttonsDownUnder}>
+                    <Button />
+                    <Button />
+                </div>
                 <hr />
                 <ColorGroup>
                     <ColorCard color={'#ff03f2'} copytext={true} />
@@ -29,11 +33,15 @@ export function MyPallettes({ title }: { title: string }) {
                     <ColorCard color={'#ff03f2'} copytext={true} />
                     <ColorCard color={'#ff03f2'} copytext={true} />
                     <ColorCard color={'#ff03f2'} copytext={true} />
-                    <div>
+                    <div className={mypalletsStyle.buttonsToTheSide}>
                         <Button />
                         <Button />
                     </div>
                 </ColorGroup>
+                <div className={mypalletsStyle.buttonsDownUnder}>
+                    <Button />
+                    <Button />
+                </div>
                 <hr />
                 <ColorGroup>
                     <ColorCard color={'#ff03f2'} copytext={true} />
@@ -41,11 +49,15 @@ export function MyPallettes({ title }: { title: string }) {
                     <ColorCard color={'#ff03f2'} copytext={true} />
                     <ColorCard color={'#ff03f2'} copytext={true} />
                     <ColorCard color={'#ff03f2'} copytext={true} />
-                    <div>
+                    <div className={mypalletsStyle.buttonsToTheSide}>
                         <Button />
                         <Button />
                     </div>
                 </ColorGroup>
+                <div className={mypalletsStyle.buttonsDownUnder}>
+                    <Button />
+                    <Button />
+                </div>
 
             </section>
         </>

@@ -1,0 +1,43 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    display: grid;
+    width: 100%;
+
+    .color {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .codeAndCopy {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        color: #ffffff;
+        align-items: center;
+
+        .code {
+            padding: 4px;
+        }
+
+        .copyText {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            color: #ffffff;
+            padding: 4px;
+
+            img {
+                height: 20px;
+            }
+        }
+
+        .copyText,
+        .copyNoText {
+            background-color: #212121;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
