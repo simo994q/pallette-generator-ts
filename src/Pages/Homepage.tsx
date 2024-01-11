@@ -12,7 +12,7 @@ export function Homepage({ title }: { title: string }) {
     const { generatedPallette } = useContext(ColorContext)
     const { setGeneratedPallette } = useContext(ColorContext)
 
-    
+
     const fetchNewPallette = async () => {
         const response = await fetch('http://colormind.io/api/', {
             method: 'POST',
@@ -25,7 +25,7 @@ export function Homepage({ title }: { title: string }) {
 
         data.result.map((arr: number[]) => {
             const rgb_arr = arr;
-            const rgb = "#" + rgb_arr.map((e: any)=>e.toString(16).padStart(2, 0)).join("")
+            const rgb = "#" + rgb_arr.map((e: any) => e.toString(16).padStart(2, 0)).join("")
             allResultsHex.push(rgb)
         })
         console.log(allResultsHex);
@@ -36,10 +36,10 @@ export function Homepage({ title }: { title: string }) {
         localStorage.setItem('generatedPallette', JSON.stringify(allResultsHex))
         localStorage.setItem('activePallette', JSON.stringify(allResultsHex))
         return data;
-    }   
+    }
 
     console.log(generatedPallette);
-    
+
     useEffect(() => {
         if (localStorage.getItem('generatedPallette')) {
             setGeneratedPallette(JSON.parse(localStorage.getItem('generatedPallette')!))
@@ -53,13 +53,23 @@ export function Homepage({ title }: { title: string }) {
             </div>
             <ColorGroup>
                 {generatedPallette.length ?
-                    generatedPallette.map((color: string, i: number) => {
-                        return <ColorCard color={color} copytext={true} key={i} />
-                    }
-                    )
+                    <>
+                        {generatedPallette.map((color: string, i: number) => {
+                            return <ColorCard color={color} copytext={true} key={i} />
+
+                        }
+
+                        )}
+                        <div className={homepageStyle.generateSaveMobile}>
+                            <Button onClick={() => fetchNewPallette()}>Generate</Button>
+                            <Button>Save</Button>
+                        </div>
+
+                    </>
                     :
                     <p className={homepageStyle.infoText}>Click generate to get new colors</p>
                 }
+
             </ColorGroup>
             <div className={homepageStyle.generateSave}>
                 <Button onClick={() => fetchNewPallette()}>Generate</Button>

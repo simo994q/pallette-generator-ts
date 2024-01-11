@@ -2,7 +2,7 @@
     display: flex;
     border-bottom: #CF9407 solid 4px;
     padding-bottom: 15px;
-    width: 100vw;
+    width: 100%;
     background-color: #1e1e1e;
     height: 100px;
     align-items: center;
@@ -14,27 +14,31 @@
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
+        align-items: center;
     }
 
     h3 {
         display: flex;
-        background: -webkit-linear-gradient(rgb(78, 25, 94), rgb(80, 117, 31));
+        background: -webkit-linear-gradient(rgb(191, 71, 228), rgb(80, 117, 31));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-size: 2rem;
-        // align-items: start;
+
     }
 
     ul {
         display: flex;
         list-style-type: none;
         justify-content: end;
-
+        gap: 10px;
+        align-items: center;
     }
 
 
     a {
+        display: flex;
         text-decoration: none;
+        align-items: center;
     }
 
 
@@ -45,16 +49,21 @@
 
     .navigation {
         height: 190px;
-    }
 
-    ul {
-        flex-direction: column;
-    }
-
-
-    h3 {
-        font-size: 0.5rem;
-        text-align: center;
+        nav {
+            flex-direction: column;
+        }
+        
+        ul {
+            flex-direction: column;
+        }
+        
+        
+        h3 {
+            margin-top: 20px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
     }
 
 

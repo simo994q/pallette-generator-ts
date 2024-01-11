@@ -1,5 +1,6 @@
 .homepage {
     margin: 30px;
+
     .headline {
         display: flex;
         flex-direction: column;
@@ -10,7 +11,7 @@
     h1 {
         font-size: 5rem;
         margin: 20px 20px 50px 20px;
-        background: -webkit-linear-gradient(rgb(112, 0, 146), rgb(44, 192, 44));
+        background: -webkit-linear-gradient(rgb(194, 26, 245), rgb(44, 192, 44));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -30,13 +31,44 @@
     color: white;
     font-size: 0.8rem;
 }
-    // margin: 50px;
+
+
+.generateSaveMobile {
+    display: none;
+}
 
 
 @media (max-width: 360px) {
 
-    h1{
+    .generateSaveMobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .generateSave {
         display: none;
     }
-    
- }
+
+    .homepage {
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 20px 0px;
+
+        }
+
+    }
+}
+
+
+@media (max-width: 500px) and (min-width: 360px) {
+
+    .homepage {
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+}
