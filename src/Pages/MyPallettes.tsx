@@ -25,9 +25,12 @@ export function MyPallettes() {
                                     <Button>Delete</Button>
                                 </div>
                             </ColorGroup>
-                            <div className={mypalletsStyle.buttonsDownUnder}>
+                            <div className={mypalletsStyle.buttonsDownUnderWrapper}>
+                                <div className={mypalletsStyle.bgLine} />
+                                <div className={mypalletsStyle.buttonsDownUnder}>
                                 <Button>Set Active</Button>
                                 <Button>Delete</Button>
+                                </div>
                             </div>
                             <hr className={i !== fakeData.length - 1 ? mypalletsStyle.lineFull : mypalletsStyle.lineNone} />
                         </div>

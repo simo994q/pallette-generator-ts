@@ -9,17 +9,8 @@
 }
 
 
-
-@media (max-width: 360px) {
+@media (max-width: 450px) {
     .wrapper {
-        gap: 1rem;
-
-    }
-}
-
-@media (min-width: 360px) and (max-width: 450px) {
-    .wrapper {
-        gap: 1rem;
-
+        gap: 0.5rem;
     }
 }

@@ -5,6 +5,7 @@
     gap: 40px;
     max-width: 1000px;
     margin: auto;
+
 }
 
 .buttonsToTheSide {
@@ -17,6 +18,12 @@
 
 .buttonsDownUnder {
     display: none;
+    position: relative;
+}
+
+.buttonsDownUnderWrapper {
+    display: none;
+    position: relative;
 }
 
 .lineFull {
@@ -28,24 +35,102 @@
     display: none;
 }
 
+.bgLine {
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translate(0%, -50%);
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(3,0,255,1) 100%);
+}
 
-@media (max-width: 680px) {
+@media (min-width: 500px) and (max-width: 680px) {
 
     hr {
         display: none;
     }
 
-        .savedPallets {
-            padding: 20px;
-        }
+    .savedPallets {
+        padding: 20px;
+    }
 
-        .buttonsToTheSide {
-            display: none;
-        }
+    .buttonsToTheSide {
+        display: none;
+    }
 
+    .buttonsDownUnderWrapper {
+        display: block;
+    }
+    .buttonsDownUnder {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        margin: 0 110px;
+    }
 
-        .buttonsDownUnder {
-            display: flex;
-            flex-direction: row;
-        }
+    .lineFull,
+    .lineNone {
+        display: none;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 500px) {
+
+    hr {
+        display: none;
+    }
+
+    .savedPallets {
+        padding: 20px;
+    }
+
+    .buttonsToTheSide {
+        display: none;
+    }
+
+    .buttonsDownUnderWrapper {
+        display: block;
+    }
+    .buttonsDownUnder {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        margin: 0 60px;
+    }
+
+    .lineFull,
+    .lineNone {
+        display: none;
+    }
+}
+
+@media (max-width: 350px) {
+
+    hr {
+        display: none;
+    }
+
+    .savedPallets {
+        padding: 20px;
+    }
+
+    .buttonsToTheSide {
+        display: none;
+    }
+
+    .buttonsDownUnderWrapper {
+        display: block;
+    }
+    .buttonsDownUnder {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin: 0 30px;
+    }
+
+    .lineFull,
+    .lineNone {
+        display: none;
+    }
 }

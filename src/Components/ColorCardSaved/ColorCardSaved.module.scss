@@ -84,7 +84,7 @@
         }
     }
 }
-@media (max-width: 450px) {
+@media (min-width: 300px) and (max-width: 450px) {
     .wrapper {
         .codeAndCopy {
             font-size: 0.5rem;
@@ -93,6 +93,21 @@
     
                 img {
                     height: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 300px) {
+    .wrapper {
+        .codeAndCopy {
+            font-size: 0.3rem;
+            .copyNoText {
+                font-size: 0.3rem;
+    
+                img {
+                    height: 10px;
                 }
             }
         }
