@@ -1,28 +1,42 @@
 .savedPallets {
-
     padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
 
-    hr {
-        // margin: 50px;
-    }
+.buttonsToTheSide {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
 }
 
 .buttonsDownUnder {
     display: none;
 }
 
+.lineFull {
+    width: 100%;
+    margin-top: 30px;
+}
 
-@media (max-width: 360px) {
+.lineNone {
+    display: none;
+}
+
+
+@media (max-width: 680px) {
 
     hr {
         display: none;
     }
 
-
-    @media (max-width: 360px) {
-
-        .savedPallets{
-            padding: 5px;
+        .savedPallets {
+            padding: 20px;
         }
 
         .buttonsToTheSide {
@@ -34,6 +48,4 @@
             display: flex;
             flex-direction: row;
         }
-    }
-
 }
