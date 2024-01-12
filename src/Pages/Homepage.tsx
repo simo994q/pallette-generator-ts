@@ -12,6 +12,7 @@ export function Homepage({ title }: { title: string }) {
     const { generatedPallette } = useContext(ColorContext)
     const { setGeneratedPallette } = useContext(ColorContext)
 
+    const { setUserPallettes } = useContext(ColorContext)
 
     const fetchNewPallette = async () => {
         const response = await fetch('http://colormind.io/api/', {
@@ -38,6 +39,40 @@ export function Homepage({ title }: { title: string }) {
         return data;
     }
 
+    // const testpal = ['#322a26', '#536e57', '#7a8857', '#d1c877', '#fbd5ae']
+    // console.log(generatedPallette);
+
+
+    // console.log(userPallettes.find((testpal) => testpal === generatedPallette));
+
+
+
+
+    const saveGeneratedPallette = () => {
+        if (localStorage.getItem('userPallettes')) {
+            const localPallettesJSON = JSON.parse(localStorage.getItem('userPallettes')!)
+
+            const doesItExist = localPallettesJSON.some((palette: Array<Array<string>>) => JSON.stringify(palette) === JSON.stringify(generatedPallette))
+            console.log(doesItExist);
+
+            if (doesItExist) {
+                alert('asved')
+            } else {
+                const pallettes = localPallettesJSON
+                localStorage.setItem('userPallettes', JSON.stringify([...pallettes, generatedPallette]))
+                console.log(localPallettesJSON);
+            }
+
+        } else {
+            localStorage.setItem('userPallettes', JSON.stringify([generatedPallette]))
+            const pallettes = JSON.parse(localStorage.getItem('userPallettes')!)
+            setUserPallettes(pallettes)
+            console.log(JSON.parse(localStorage.getItem('userPallettes')!));
+        }
+
+
+    }
+
 
     useEffect(() => {
         if (localStorage.getItem('generatedPallette')) {
@@ -61,7 +96,7 @@ export function Homepage({ title }: { title: string }) {
                         )}
                         <div className={homepageStyle.generateSaveMobile}>
                             <Button onClick={() => fetchNewPallette()}>Generate</Button>
-                            <Button>Save</Button>
+                            <Button onClick={() => saveGeneratedPallette()}>Save</Button>
                         </div>
 
                     </>
@@ -72,7 +107,7 @@ export function Homepage({ title }: { title: string }) {
             </ColorGroup>
             <div className={homepageStyle.generateSave}>
                 <Button onClick={() => fetchNewPallette()}>Generate</Button>
-                <Button>Save</Button>
+                <Button onClick={() => saveGeneratedPallette()}>Save</Button>
             </div>
         </section>
     )

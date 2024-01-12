@@ -3,7 +3,12 @@ import buttonsStyle from './Buttons.module.scss'
 // import { useContext } from 'react'
 // import { ColorContext } from '../../ColorContext'
 
-export function Button({ children, onClick, navButtonGenerate }: { children: React.ReactNode, onClick?: () => Promise<any>, navButtonGenerate?:CSSProperties }) {
+interface ButtonProps {
+    children: React.ReactNode
+    onClick?: (() => void) | (() => Promise<any>)
+    navButtonGenerate?: CSSProperties
+}
+export function Button({ children, onClick, navButtonGenerate }: ButtonProps) {
 
 
     // const {activePallette} = useContext(ColorContext)
