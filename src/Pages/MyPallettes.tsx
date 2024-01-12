@@ -18,13 +18,13 @@ export function MyPallettes({ title }: { title: string }) {
                     <ColorCard color={'#ff03f2'} copytext={false} />
                     <ColorCard color={'#ff03f2'} copytext={false} />
                     <div className={mypalletsStyle.buttonsToTheSide}>
-                        <Button />
-                        <Button />
+                        <Button>Set Active</Button>
+                        <Button>Delete</Button>
                     </div>
                 </ColorGroup>
                 <div className={mypalletsStyle.buttonsDownUnder}>
-                    <Button />
-                    <Button />
+                    <Button>Active</Button>
+                    <Button>Delete</Button>
                 </div>
                 <hr />
                 <ColorGroup>
@@ -34,13 +34,13 @@ export function MyPallettes({ title }: { title: string }) {
                     <ColorCard color={'#ff03f2'} copytext={false} />
                     <ColorCard color={'#ff03f2'} copytext={false} />
                     <div className={mypalletsStyle.buttonsToTheSide}>
-                        <Button />
-                        <Button />
+                    <Button>Active</Button>
+                    <Button>Delete</Button>
                     </div>
                 </ColorGroup>
                 <div className={mypalletsStyle.buttonsDownUnder}>
-                    <Button />
-                    <Button />
+                <Button>Active</Button>
+                    <Button>Delete</Button>
                 </div>
                 <hr />
                 <ColorGroup>
@@ -50,13 +50,13 @@ export function MyPallettes({ title }: { title: string }) {
                     <ColorCard color={'#ff03f2'} copytext={false} />
                     <ColorCard color={'#ff03f2'} copytext={false} />
                     <div className={mypalletsStyle.buttonsToTheSide}>
-                        <Button />
-                        <Button />
+                    <Button>Active</Button>
+                    <Button>Delete</Button>
                     </div>
                 </ColorGroup>
                 <div className={mypalletsStyle.buttonsDownUnder}>
-                    <Button />
-                    <Button />
+                <Button>Active</Button>
+                    <Button>Delete</Button>
                 </div>
 
             </section>
