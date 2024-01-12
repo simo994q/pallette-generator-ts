@@ -1,0 +1,17 @@
+.testPage {
+    margin: 30px;
+
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    form {
+        border-color: red 1px solid;
+        width: 20vw;
+        display: flex;
+        flex-direction: column;
+        margin: 30px;
+    }
+
+}
