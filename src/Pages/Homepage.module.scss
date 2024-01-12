@@ -39,12 +39,12 @@
 }
 
 
-@media (max-width: 360px) {
+@media (max-width: 500px) {
 
     .generateSaveMobile {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 30px;
         justify-content: center;
     }
 
