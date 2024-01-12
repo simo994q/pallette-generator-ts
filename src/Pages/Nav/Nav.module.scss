@@ -22,7 +22,8 @@
         background: -webkit-linear-gradient(rgb(191, 71, 228), rgb(80, 117, 31));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-size: 2rem; 
+        font-size: 5vw;
+        margin-right: 15px;
     }
 
     ul {
@@ -52,12 +53,12 @@
         nav {
             flex-direction: column;
         }
-        
+
         ul {
             flex-direction: column;
         }
-        
-        
+
+
         h3 {
             margin: 20px 0;
             font-size: 1.4rem;
