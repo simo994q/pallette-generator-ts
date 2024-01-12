@@ -4,61 +4,38 @@ import ColorCard from '../Components/ColorCardSaved/ColorCardSaved'
 import ColorGroup from '../Components/ColorGroupSaved/ColorGroupSaved'
 
 
-export function MyPallettes({ title }: { title: string }) {
+export function MyPallettes() {
 
+    const fakeData: Array<Array<string>> = [['#322a26', '#536e57', '#7a8857', '#d1c877', '#fbd5ae'], ['#b8614e', '#f7d298', '#f7f8e2', '#68b578', '#2b4f3d'], ['#a8431e', '#55797a', '#62bab1', '#e6dc92', '#eeb490'], ['#322a26', '#536e57', '#7a8857', '#d1c877', '#fbd5ae'], ['#b8614e', '#f7d298', '#f7f8e2', '#68b578', '#2b4f3d'], ['#a8431e', '#55797a', '#62bab1', '#e6dc92', '#eeb490']]
 
     return (
         <>
             <section className={mypalletsStyle.savedPallets}>
-
-                <ColorGroup>
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <div className={mypalletsStyle.buttonsToTheSide}>
-                        <Button>Set Active</Button>
-                        <Button>Delete</Button>
-                    </div>
-                </ColorGroup>
-                <div className={mypalletsStyle.buttonsDownUnder}>
-                    <Button>Active</Button>
-                    <Button>Delete</Button>
-                </div>
-                <hr />
-                <ColorGroup>
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <div className={mypalletsStyle.buttonsToTheSide}>
-                    <Button>Active</Button>
-                    <Button>Delete</Button>
-                    </div>
-                </ColorGroup>
-                <div className={mypalletsStyle.buttonsDownUnder}>
-                <Button>Active</Button>
-                    <Button>Delete</Button>
-                </div>
-                <hr />
-                <ColorGroup>
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <ColorCard color={'#ff03f2'} copytext={false} />
-                    <div className={mypalletsStyle.buttonsToTheSide}>
-                    <Button>Active</Button>
-                    <Button>Delete</Button>
-                    </div>
-                </ColorGroup>
-                <div className={mypalletsStyle.buttonsDownUnder}>
-                <Button>Active</Button>
-                    <Button>Delete</Button>
-                </div>
-
+                {fakeData.map((pallettes, i) => {
+                    return (
+                        <div key={i}>
+                            <ColorGroup>
+                                <ColorCard color={pallettes[0]} copytext={false} />
+                                <ColorCard color={pallettes[1]} copytext={false} />
+                                <ColorCard color={pallettes[2]} copytext={false} />
+                                <ColorCard color={pallettes[3]} copytext={false} />
+                                <ColorCard color={pallettes[4]} copytext={false} />
+                                <div className={mypalletsStyle.buttonsToTheSide}>
+                                    <Button>Set Active</Button>
+                                    <Button>Delete</Button>
+                                </div>
+                            </ColorGroup>
+                            <div className={mypalletsStyle.buttonsDownUnderWrapper}>
+                                <div className={mypalletsStyle.bgLine} />
+                                <div className={mypalletsStyle.buttonsDownUnder}>
+                                <Button>Set Active</Button>
+                                <Button>Delete</Button>
+                                </div>
+                            </div>
+                            <hr className={i !== fakeData.length - 1 ? mypalletsStyle.lineFull : mypalletsStyle.lineNone} />
+                        </div>
+                    )
+                })}
             </section>
         </>
 

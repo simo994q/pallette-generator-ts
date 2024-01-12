@@ -38,7 +38,6 @@ export function Homepage({ title }: { title: string }) {
         return data;
     }
 
-    console.log(generatedPallette);
 
     useEffect(() => {
         if (localStorage.getItem('generatedPallette')) {
