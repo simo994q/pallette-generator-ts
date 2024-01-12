@@ -1,7 +1,7 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    display: grid;
+    // display: grid;
     width: 100%;
 
     .color {
@@ -44,7 +44,7 @@
 
 @media (max-width: 360px) {
     .color {
-        gap: 3rem;
+        gap: 1rem;
 
     }
 

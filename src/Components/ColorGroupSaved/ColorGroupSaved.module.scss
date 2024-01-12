@@ -5,8 +5,8 @@
     // display: grid;
     // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     width: 100%;
-    justify-content: center;
-    gap: 4rem;
+    
+    gap: 1rem;
 
 }
 
@@ -14,7 +14,7 @@
 
 @media (max-width: 360px) {
     .wrapper {
-        gap: 1.5rem;
+        gap: 1rem;
 
     }
 

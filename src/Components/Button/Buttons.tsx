@@ -2,8 +2,11 @@ import buttonsStyle from './Buttons.module.scss'
 // import { useContext } from 'react'
 // import { ColorContext } from '../../ColorContext'
 
+interface styling {
+    width: string
+}
 
-export function Button({ children, onClick }: { children: React.ReactNode, onClick?: () => Promise<any> }) {
+export function Button({ children, onClick, navButtonGenerate }: { children: React.ReactNode, onClick?: () => Promise<any>, navButtonGenerate?:styling }) {
 
 
     // const {activePallette} = useContext(ColorContext)
@@ -12,7 +15,7 @@ export function Button({ children, onClick }: { children: React.ReactNode, onCli
 
     return (
         <>
-            <div className={buttonsStyle.moduleBorderWrap } onClick={onClick}>
+            <div className={buttonsStyle.moduleBorderWrap} style={navButtonGenerate} onClick={onClick}>
                 <button className={buttonsStyle.button}>{children}</button>
             </div>
         </>
