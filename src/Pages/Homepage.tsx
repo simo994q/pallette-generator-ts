@@ -39,14 +39,6 @@ export function Homepage({ title }: { title: string }) {
         return data;
     }
 
-    // const testpal = ['#322a26', '#536e57', '#7a8857', '#d1c877', '#fbd5ae']
-    // console.log(generatedPallette);
-
-
-    // console.log(userPallettes.find((testpal) => testpal === generatedPallette));
-
-
-
 
     const saveGeneratedPallette = () => {
         if (localStorage.getItem('userPallettes')) {
@@ -85,26 +77,25 @@ export function Homepage({ title }: { title: string }) {
             <div className={homepageStyle.headline}>
                 <h1>{title}</h1>
             </div>
-            <ColorGroup>
-                {generatedPallette.length ?
-                    <>
-                        {generatedPallette.map((color: string, i: number) => {
-                            return <ColorCard color={color} copytext={true} key={i} />
 
-                        }
+            {generatedPallette.length ?
+                <ColorGroup>
+                    {generatedPallette.map((color: string, i: number) => {
+                        return <ColorCard color={color} copytext={true} key={i} />
 
-                        )}
-                        <div className={homepageStyle.generateSaveMobile}>
-                            <Button onClick={() => fetchNewPallette()}>Generate</Button>
-                            <Button onClick={() => saveGeneratedPallette()}>Save</Button>
-                        </div>
+                    }
 
-                    </>
-                    :
-                    <p className={homepageStyle.infoText}>Click generate to get new colors</p>
-                }
+                    )}
+                    <div className={homepageStyle.generateSaveMobile}>
+                        <Button onClick={() => fetchNewPallette()}>Generate</Button>
+                        <Button onClick={() => saveGeneratedPallette()}>Save</Button>
+                    </div>
+                </ColorGroup>
+                :
+                <p className={homepageStyle.infoText}>Click generate to get new colors</p>
+            }
 
-            </ColorGroup>
+
             <div className={homepageStyle.generateSave}>
                 <Button onClick={() => fetchNewPallette()}>Generate</Button>
                 <Button onClick={() => saveGeneratedPallette()}>Save</Button>
