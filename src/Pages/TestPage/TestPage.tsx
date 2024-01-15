@@ -1,5 +1,6 @@
 import testPageStyle from './Testpage.module.scss'
 import { Button } from '../../Components/Button/Buttons'
+import { TestCard } from './Components/Card/Card'
 
 export function TestPage({ title }: { title: string }) {
 
@@ -7,7 +8,9 @@ export function TestPage({ title }: { title: string }) {
     return (
 
         <section className={testPageStyle.testPage}>
+            
             <h1>Your cool webside Heading</h1>
+            <TestCard/>
             <Button>Your Cool Button</Button>
             <form>
                 <label>Username
