@@ -11,7 +11,7 @@ export function Navigation() {
                 <ul>
                     <Link to='/'><Button navButtonGenerate={{width: '100px',  }} >Generate</Button></Link>
                     <Link to='/mypallettes'><Button navButtonGenerate={{width:'100px'}}>Saved</Button></Link>
-                    <Link to='/testPage'><Button navButtonGenerate={{width:'200px'}}>Test Your pallettes here</Button></Link>
+                    <Link to='/testPage'><Button navButtonGenerate={{width:'200px'}}>Test your pallettes here</Button></Link>
                 </ul>
             </nav>
         </section>

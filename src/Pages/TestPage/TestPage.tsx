@@ -1,6 +1,7 @@
-import testPageStyle from './Testpage.module.scss'
-import { Button } from '../../Components/Button/Buttons'
 import { TestCard } from './Components/Card/Card'
+import { TestForm } from './Components/Form/Form'
+import testPageStyle from './Testpage.module.scss'
+import { PieChart } from './Components/PieChart/PieChart'
 
 export function TestPage({ title }: { title: string }) {
 
@@ -8,20 +9,12 @@ export function TestPage({ title }: { title: string }) {
     return (
 
         <section className={testPageStyle.testPage}>
-            
+
             <h1>Your cool webside Heading</h1>
-            <TestCard/>
-            <Button>Your Cool Button</Button>
-            <form>
-                <label>Username
-                    <input name="username"></input>
-                </label>
-                <label htmlFor="">Password
-                    <input type="password" name="password" />
-                </label>
-                <input type="submit" value="Send" />
-            </form>            </section>
-
-
+            
+            <TestCard />
+            <TestForm/>
+            <PieChart/>
+        </section>
     )
 }
