@@ -45,37 +45,42 @@ export function MyPallettes() {
     return (
         <>
             {
-                !JSON.parse(localStorage.getItem('userPallettes')!).length
+                !JSON.parse(localStorage.getItem('userPallettes')!)
                     ?
-                    <div>Her kommer dine gemte farver</div>
+                    <div style={{ textAlign: 'center', color: '#FFFFFF', margin: '2rem 0.5rem' }}>Du har ingen gemte farver</div>
                     :
-                    <section className={mypalletsStyle.savedPallets}>
-                        {JSON.parse(localStorage.getItem('userPallettes')!).reverse().map((pallettes: Array<string>, i: number) => {
-                            return (
-                                <div key={i}>
-                                    <ColorGroup>
-                                        <ColorCard color={pallettes[0]} copytext={false} />
-                                        <ColorCard color={pallettes[1]} copytext={false} />
-                                        <ColorCard color={pallettes[2]} copytext={false} />
-                                        <ColorCard color={pallettes[3]} copytext={false} />
-                                        <ColorCard color={pallettes[4]} copytext={false} />
-                                        <div className={mypalletsStyle.buttonsToTheSide}>
-                                            <Button onClick={() => setActive(pallettes)}>Set Active</Button>
-                                            <Button onClick={() => deletePallette(pallettes, i)}>Delete</Button>
+                    JSON.parse(localStorage.getItem('userPallettes')!).length
+                        ?
+                        <section className={mypalletsStyle.savedPallets}>
+                            {JSON.parse(localStorage.getItem('userPallettes')!).reverse().map((pallettes: Array<string>, i: number) => {
+                                return (
+                                    <div key={i}>
+                                        <ColorGroup>
+                                            <ColorCard color={pallettes[0]} copytext={false} />
+                                            <ColorCard color={pallettes[1]} copytext={false} />
+                                            <ColorCard color={pallettes[2]} copytext={false} />
+                                            <ColorCard color={pallettes[3]} copytext={false} />
+                                            <ColorCard color={pallettes[4]} copytext={false} />
+                                            <div className={mypalletsStyle.buttonsToTheSide}>
+                                                <Button onClick={() => setActive(pallettes)}>Set Active</Button>
+                                                <Button onClick={() => deletePallette(pallettes, i)}>Delete</Button>
+                                            </div>
+                                        </ColorGroup>
+                                        <div className={mypalletsStyle.buttonsDownUnderWrapper}>
+                                            <div className={mypalletsStyle.bgLine} />
+                                            <div className={mypalletsStyle.buttonsDownUnder}>
+                                                <Button onClick={() => setActive(pallettes)}>Set Active</Button>
+                                                <Button onClick={() => deletePallette(pallettes, i)}>Delete</Button>
+                                            </div>
                                         </div>
-                                    </ColorGroup>
-                                    <div className={mypalletsStyle.buttonsDownUnderWrapper}>
-                                        <div className={mypalletsStyle.bgLine} />
-                                        <div className={mypalletsStyle.buttonsDownUnder}>
-                                            <Button onClick={() => setActive(pallettes)}>Set Active</Button>
-                                            <Button onClick={() => deletePallette(pallettes, i)}>Delete</Button>
-                                        </div>
+                                        <hr className={i !== JSON.parse(localStorage.getItem('userPallettes')!).length - 1 ? mypalletsStyle.lineFull : mypalletsStyle.lineNone} />
                                     </div>
-                                    <hr className={i !== JSON.parse(localStorage.getItem('userPallettes')!).length - 1 ? mypalletsStyle.lineFull : mypalletsStyle.lineNone} />
-                                </div>
-                            )
-                        })}
-                    </section>}
+                                )
+                            })}
+                        </section>
+                        :
+                        <div style={{ textAlign: 'center', color: '#FFFFFF', margin: '2rem 0.5rem' }}>Du har ingen gemte farver</div>
+            }
         </>
 
     )

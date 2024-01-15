@@ -7,6 +7,7 @@ import ColorGroup from '../Components/ColorGroupHome/ColorGroupHome'
 
 export function Homepage({ title }: { title: string }) {
 
+    const { activePallette } = useContext(ColorContext)
     const { setActivePallette } = useContext(ColorContext)
 
     const { generatedPallette } = useContext(ColorContext)
@@ -65,6 +66,8 @@ export function Homepage({ title }: { title: string }) {
 
     }
 
+    console.log(`${activePallette[0]}, ${activePallette[1]}, ${activePallette[2]}, ${activePallette[3]}, ${activePallette[4]}`);
+    console.log('-webkit-linear-gradient(rgb(194, 26, 245), rgb(44, 192, 44))');
 
 
 
@@ -77,11 +80,19 @@ export function Homepage({ title }: { title: string }) {
             fetchNewPallette()
         }
     }, [])
+    // ${activePallette[0]}, ${activePallette[1]}, ${activePallette[2]}, ${activePallette[3]}, ${activePallette[4]}
 
+    console.log(`-webkit-linear-gradient(${JSON.parse(localStorage.getItem('activePallette')!)[0]}, ${JSON.parse(localStorage.getItem('activePallette')!)[1]}, ${JSON.parse(localStorage.getItem('activePallette')!)[2]}, ${JSON.parse(localStorage.getItem('activePallette')!)[3]}, ${JSON.parse(localStorage.getItem('activePallette')!)[4]})`);
+    
     return (
         <section className={homepageStyle.homepage}>
             <div className={homepageStyle.headline}>
-                <h1>{title}</h1>
+                {localStorage.getItem('activePallette') 
+                ? 
+                <h1 style={{ background: `-webkit-linear-gradient(left, ${JSON.parse(localStorage.getItem('activePallette')!)[0]}, ${JSON.parse(localStorage.getItem('activePallette')!)[1]}, ${JSON.parse(localStorage.getItem('activePallette')!)[2]}, ${JSON.parse(localStorage.getItem('activePallette')!)[3]}, ${JSON.parse(localStorage.getItem('activePallette')!)[4]}) text`}}>{title}</h1>
+                :
+                <h1 style={{ background: `-webkit-linear-gradient(#bab393, #f1e5c1, #d0753c, #5e3326, #2d2a23)`, WebkitBackgroundClip: 'text'}}>{title}</h1>
+                }
             </div>
 
             {generatedPallette.length ?
