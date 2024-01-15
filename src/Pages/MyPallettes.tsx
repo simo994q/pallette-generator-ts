@@ -8,9 +8,8 @@ import { ColorContext } from '../ColorContext'
 
 export function MyPallettes() {
 
-    const defTheme: Array<string> = ['#CF9407', '#F6EDB7', '#BDBF63', '#7C7582', '#601E3E']
-
     const { setActivePallette } = useContext(ColorContext)
+    const { generatedPallette } = useContext(ColorContext)
 
     const [refresh, setRefresh] = useState(true)
 
@@ -22,13 +21,14 @@ export function MyPallettes() {
         console.log(pallettes);
 
         localStorage.setItem('userPallettes', JSON.stringify(pallettes.reverse()))
-        
+
         const active = JSON.parse(localStorage.getItem('activePallette')!)
         if (active[0] === pallette[0] && active[1] === pallette[1] && active[2] === pallette[2] && active[3] === pallette[3] && active[4] === pallette[4]) {
             console.log(123);
-            
-            setActivePallette(defTheme)
-            localStorage.setItem('activePallette', JSON.stringify(defTheme))
+
+            setActivePallette(generatedPallette)
+            localStorage.setItem('activePallette', JSON.stringify(generatedPallette))
+            setRefresh(!refresh)
         }
 
         setRefresh(!refresh)

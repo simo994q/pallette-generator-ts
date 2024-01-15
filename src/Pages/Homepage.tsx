@@ -66,9 +66,15 @@ export function Homepage({ title }: { title: string }) {
     }
 
 
+
+
     useEffect(() => {
         if (localStorage.getItem('generatedPallette')) {
             setGeneratedPallette(JSON.parse(localStorage.getItem('generatedPallette')!))
+        }
+
+        if (!localStorage.getItem('generatedPallette')) {
+            fetchNewPallette()
         }
     }, [])
 
