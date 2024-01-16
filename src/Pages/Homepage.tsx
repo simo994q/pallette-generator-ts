@@ -104,7 +104,7 @@ export function Homepage({ title }: { title: string }) {
                 <ColorGroup>
                     {generatedPallette.map((color: string, i: number) => {
                         return <ColorCard color={color} copytext={true} key={i} />
-
+                        
                     }
 
                     )}

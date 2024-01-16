@@ -1,10 +1,11 @@
 import style from './ColorCardHome.module.scss'
+import { toast } from 'react-toastify'
 
 const ColorCard = ({ color, copytext }: { color: string, copytext: boolean }) => {
     
     const handleCopy = () => {
         navigator.clipboard.writeText(color)
-        alert("Copied the text: " + color);
+        // alert("Copied the text: " + color);
     }
     
     return (
@@ -17,7 +18,8 @@ const ColorCard = ({ color, copytext }: { color: string, copytext: boolean }) =>
                         {color}
                     </div>
                     {copytext ?
-                        <button onClick={() => handleCopy()} className={style.copyText}>
+                        <button onClick={() => {handleCopy(), toast('The color has been copied')
+                    }} className={style.copyText}>
                             <p>copy</p>
                             <img src="clipboard.png" alt="Copy" />
                         </button>
