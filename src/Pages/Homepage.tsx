@@ -1,13 +1,14 @@
 import homepageStyle from '../Pages/Homepage.module.scss'
 import { Button } from "../Components/Button/Buttons"
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { ColorContext } from '../ColorContext'
 import ColorCard from '../Components/ColorCardHome/ColorCardHome'
 import ColorGroup from '../Components/ColorGroupHome/ColorGroupHome'
 
 export function Homepage({ title }: { title: string }) {
 
-    const { activePallette } = useContext(ColorContext)
+    const [refresh, setRefresh] = useState(true)
+
     const { setActivePallette } = useContext(ColorContext)
 
     const { generatedPallette } = useContext(ColorContext)
@@ -21,8 +22,6 @@ export function Homepage({ title }: { title: string }) {
             body: JSON.stringify({ model: 'default' })
         });
         const data = await response.json();
-        console.log(data);
-
         const allResultsHex: Array<string> = []
 
         data.result.map((arr: number[]) => {
@@ -30,7 +29,6 @@ export function Homepage({ title }: { title: string }) {
             const rgb = "#" + rgb_arr.map((e: any) => e.toString(16).padStart(2, 0)).join("")
             allResultsHex.push(rgb)
         })
-        console.log(allResultsHex);
 
         setActivePallette(allResultsHex)
         setGeneratedPallette(allResultsHex)
@@ -46,41 +44,36 @@ export function Homepage({ title }: { title: string }) {
             const localPallettesJSON = JSON.parse(localStorage.getItem('userPallettes')!)
 
             const doesItExist = localPallettesJSON.some((palette: Array<Array<string>>) => JSON.stringify(palette) === JSON.stringify(generatedPallette))
-            console.log(doesItExist);
 
             if (doesItExist) {
                 alert('asved')
             } else {
                 const pallettes = localPallettesJSON
                 localStorage.setItem('userPallettes', JSON.stringify([...pallettes, generatedPallette]))
-                console.log(localPallettesJSON);
             }
 
         } else {
             localStorage.setItem('userPallettes', JSON.stringify([generatedPallette]))
             const pallettes = JSON.parse(localStorage.getItem('userPallettes')!)
             setUserPallettes(pallettes)
-            console.log(JSON.parse(localStorage.getItem('userPallettes')!));
         }
 
 
     }
 
-    console.log(`${activePallette[0]}, ${activePallette[1]}, ${activePallette[2]}, ${activePallette[3]}, ${activePallette[4]}`);
-    console.log('-webkit-linear-gradient(rgb(194, 26, 245), rgb(44, 192, 44))');
 
 
 
     useEffect(() => {
         if (localStorage.getItem('generatedPallette')) {
             setGeneratedPallette(JSON.parse(localStorage.getItem('generatedPallette')!))
+            setRefresh(!refresh)
         }
 
         if (!localStorage.getItem('generatedPallette')) {
             fetchNewPallette()
         }
     }, [])
-    // ${activePallette[0]}, ${activePallette[1]}, ${activePallette[2]}, ${activePallette[3]}, ${activePallette[4]}
 
     
     return (

@@ -1,7 +1,5 @@
 import { CSSProperties } from 'react'
 import buttonsStyle from './Buttons.module.scss'
-import { useContext } from 'react'
-import { ColorContext } from '../../ColorContext'
 
 interface ButtonProps {
     children: React.ReactNode
@@ -10,18 +8,22 @@ interface ButtonProps {
 }
 export function Button({ children, onClick, styleProps }: ButtonProps) {
 
-    const { activePallette } = useContext(ColorContext)
-
-    const gradTest = {
-        background: `linear-gradient(90deg, ${activePallette[0]} 0%, ${activePallette[1]} 25%, ${activePallette[2]} 50%, ${activePallette[3]} 75%, ${activePallette[4]} 100%)`
-    }
-
 
     return (
         <>
-            <div className={buttonsStyle.moduleBorderWrap} style={{...gradTest, ...styleProps}} onClick={onClick}>
+            {localStorage.getItem('activePallette')
+                ?
+                <div className={buttonsStyle.moduleBorderWrap} style={{...styleProps, background: `linear-gradient(to right, ${JSON.parse(localStorage.getItem('activePallette')!)[0]}, ${JSON.parse(localStorage.getItem('activePallette')!)[1]}, ${JSON.parse(localStorage.getItem('activePallette')!)[2]}, ${JSON.parse(localStorage.getItem('activePallette')!)[3]}, ${JSON.parse(localStorage.getItem('activePallette')!)[4]})` }} onClick={onClick}>
+                    <button className={buttonsStyle.button}>{children}</button>
+                </div>
+                :
+                <div className={buttonsStyle.moduleBorderWrap} style={{...styleProps, background: `linear-gradient(to right, #bab393, #f1e5c1, #d0753c, #5e3326, #2d2a23)`}} onClick={onClick}>
+                    <button className={buttonsStyle.button}>{children}</button>
+                </div>
+            }
+            {/* <div className={buttonsStyle.moduleBorderWrap} style={{ ...gradTest, ...styleProps }} onClick={onClick}>
                 <button className={buttonsStyle.button}>{children}</button>
-            </div>
+            </div> */}
         </>
     )
 }
