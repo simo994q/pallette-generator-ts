@@ -6,6 +6,8 @@
     background: #222;
     border: none;
     cursor: pointer;
+    border-radius: 3px;
+
 }
 
 .moduleBorderWrap {
@@ -14,8 +16,9 @@
     position: relative;
     width: 100%;
     padding: 3px;
-    background: linear-gradient(to right, red, rgb(255, 0, 255));
+    // background: linear-gradient(to right, red, rgb(255, 0, 255)); 
     // margin: 10px;
+    border-radius: 5px;
 
 }
 

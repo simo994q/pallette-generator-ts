@@ -1,0 +1,65 @@
+.testForm {
+    display: flex;
+    margin: 30px 0;
+    width: 400px;
+    border-radius: 5px;
+    border: 2px solid;
+    padding: 10px;
+    height: 100%;
+    background: #222;
+    border: none;
+   
+    form,
+    label {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0px 0px 20px 0;
+        
+    }
+
+    label {
+        color: aqua;
+    }
+
+    input {
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+    }
+}
+
+.moduleBorderWrap {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    padding: 3px;
+    background: linear-gradient(to right, red, rgb(255, 0, 255));
+    // margin: 10px;
+    border-radius: 5px;
+
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+
+    input,
+    label {
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    input {
+        height: 20px;
+        margin-left: 30px;
+    }
+
+    label {
+        width: 100%;
+        color: aqua;
+    }
+}

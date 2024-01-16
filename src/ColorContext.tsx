@@ -4,7 +4,7 @@ interface ColorContextInterface {
     activePallette: Array<string>
     setActivePallette: (pallette: Array<string>) => void
     userPallettes: Array<Array<string>>
-    setUserPallettes: (userPallette: Array<Array<string>>, pallette: Array<string>) => void
+    setUserPallettes: (userPallette: Array<Array<string>>) => void
     generatedPallette: Array<string>
     setGeneratedPallette: (pallette: Array<string>) => void
 }

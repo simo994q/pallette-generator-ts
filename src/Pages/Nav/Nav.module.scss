@@ -22,8 +22,7 @@
         background: -webkit-linear-gradient(rgb(191, 71, 228), rgb(80, 117, 31));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-size: 5vw;
-        margin-right: 15px;
+        font-size: 2rem;
     }
 
     ul {
@@ -45,10 +44,10 @@
 }
 
 
-@media (max-width: 360px) {
+@media (max-width: 375px) {
 
     .navigation {
-        height: 190px;
+        height: 230px;
 
         nav {
             flex-direction: column;
@@ -64,6 +63,16 @@
             font-size: 1.4rem;
             text-align: center;
         }
+    }
+
+
+}
+
+@media (max-width: 500px) {
+
+    .navigation {
+        height: 250px;
+
     }
 
 
