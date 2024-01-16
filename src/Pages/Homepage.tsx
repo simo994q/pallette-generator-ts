@@ -82,7 +82,6 @@ export function Homepage({ title }: { title: string }) {
     }, [])
     // ${activePallette[0]}, ${activePallette[1]}, ${activePallette[2]}, ${activePallette[3]}, ${activePallette[4]}
 
-    console.log(`-webkit-linear-gradient(${JSON.parse(localStorage.getItem('activePallette')!)[0]}, ${JSON.parse(localStorage.getItem('activePallette')!)[1]}, ${JSON.parse(localStorage.getItem('activePallette')!)[2]}, ${JSON.parse(localStorage.getItem('activePallette')!)[3]}, ${JSON.parse(localStorage.getItem('activePallette')!)[4]})`);
     
     return (
         <section className={homepageStyle.homepage}>
