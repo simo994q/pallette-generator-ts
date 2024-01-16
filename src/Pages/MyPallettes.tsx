@@ -4,7 +4,7 @@ import ColorCard from '../Components/ColorCardSaved/ColorCardSaved'
 import ColorGroup from '../Components/ColorGroupSaved/ColorGroupSaved'
 import { useState, useContext } from 'react'
 import { ColorContext } from '../ColorContext'
-
+import { toast } from 'react-toastify'
 
 export function MyPallettes() {
 
@@ -15,6 +15,8 @@ export function MyPallettes() {
 
     const deletePallette = (pallette: Array<string>, index: number) => {
         console.log(pallette);
+
+
         const pallettes: Array<Array<string>> = JSON.parse(localStorage.getItem('userPallettes')!).reverse()
 
         pallettes.splice(index, 1)
@@ -37,6 +39,7 @@ export function MyPallettes() {
     const setActive = (pallette: Array<string>) => {
         setActivePallette(pallette)
         localStorage.setItem('activePallette', JSON.stringify(pallette))
+
 
         setRefresh(!refresh)
     }
@@ -62,8 +65,8 @@ export function MyPallettes() {
                                             <ColorCard color={pallettes[3]} copytext={false} />
                                             <ColorCard color={pallettes[4]} copytext={false} />
                                             <div className={mypalletsStyle.buttonsToTheSide}>
-                                                <Button onClick={() => setActive(pallettes)}>Set Active</Button>
-                                                <Button onClick={() => deletePallette(pallettes, i)}>Delete</Button>
+                                                <Button onClick={() => {setActive(pallettes),toast('Your pallets is know showing')}}>Set Active</Button>
+                                                <Button onClick={() => {deletePallette(pallettes, i), toast('Your pallets has been deleted')}}>Delete</Button>
                                             </div>
                                         </ColorGroup>
                                         <div className={mypalletsStyle.buttonsDownUnderWrapper}>
