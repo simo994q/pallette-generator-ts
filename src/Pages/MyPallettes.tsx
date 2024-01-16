@@ -72,8 +72,8 @@ export function MyPallettes() {
                                         <div className={mypalletsStyle.buttonsDownUnderWrapper}>
                                             <div className={mypalletsStyle.bgLine} />
                                             <div className={mypalletsStyle.buttonsDownUnder}>
-                                                <Button onClick={() => setActive(pallettes)}>Set Active</Button>
-                                                <Button onClick={() => deletePallette(pallettes, i)}>Delete</Button>
+                                            <Button onClick={() => {setActive(pallettes),toast('Your pallets is know showing')}}>Set Active</Button>
+                                                <Button onClick={() => {deletePallette(pallettes, i), toast('Your pallets has been deleted')}}>Delete</Button>
                                             </div>
                                         </div>
                                         <hr className={i !== JSON.parse(localStorage.getItem('userPallettes')!).length - 1 ? mypalletsStyle.lineFull : mypalletsStyle.lineNone} />
