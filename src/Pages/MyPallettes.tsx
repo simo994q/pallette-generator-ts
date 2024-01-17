@@ -65,15 +65,19 @@ export function MyPallettes() {
                                             <ColorCard color={pallettes[3]} copytext={false} />
                                             <ColorCard color={pallettes[4]} copytext={false} />
                                             <div className={mypalletsStyle.buttonsToTheSide}>
-                                                <Button onClick={() => {setActive(pallettes),toast('Your pallets is know showing')}}>Set Active</Button>
-                                                <Button onClick={() => {deletePallette(pallettes, i), toast('Your pallets has been deleted')}}>Delete</Button>
+                                                <Button onClick={() => { setActive(pallettes), toast('Your pallets is know showing') }}>Set Active</Button>
+                                                <Button onClick={() => { deletePallette(pallettes, i), toast('Your pallets has been deleted') }}>Delete</Button>
                                             </div>
                                         </ColorGroup>
                                         <div className={mypalletsStyle.buttonsDownUnderWrapper}>
-                                            <div className={mypalletsStyle.bgLine} />
+                                            {localStorage.getItem('activePallette') ?
+                                                <div style={{ background: `linear-gradient(to right, ${JSON.parse(localStorage.getItem('activePallette')!)[0]}, ${JSON.parse(localStorage.getItem('activePallette')!)[1]}, ${JSON.parse(localStorage.getItem('activePallette')!)[2]}, ${JSON.parse(localStorage.getItem('activePallette')!)[3]}, ${JSON.parse(localStorage.getItem('activePallette')!)[4]})` }} className={mypalletsStyle.bgLine} />
+                                                :
+                                                <div style={{ background: `linear-gradient(to right, #bab393, #f1e5c1, #d0753c, #5e3326, #2d2a23)` }} className={mypalletsStyle.bgLine} />
+                                            }
                                             <div className={mypalletsStyle.buttonsDownUnder}>
-                                            <Button onClick={() => {setActive(pallettes),toast('Your pallets is know showing')}}>Set Active</Button>
-                                                <Button onClick={() => {deletePallette(pallettes, i), toast('Your pallets has been deleted')}}>Delete</Button>
+                                                <Button onClick={() => { setActive(pallettes), toast('Your pallets is know showing') }}>Set Active</Button>
+                                                <Button onClick={() => { deletePallette(pallettes, i), toast('Your pallets has been deleted') }}>Delete</Button>
                                             </div>
                                         </div>
                                         <hr className={i !== JSON.parse(localStorage.getItem('userPallettes')!).length - 1 ? mypalletsStyle.lineFull : mypalletsStyle.lineNone} />
