@@ -65,8 +65,8 @@ export function MyPallettes() {
                                             <ColorCard color={pallettes[3]} copytext={false} />
                                             <ColorCard color={pallettes[4]} copytext={false} />
                                             <div className={mypalletsStyle.buttonsToTheSide}>
-                                                <Button onClick={() => { setActive(pallettes), toast('Your pallets is know showing') }}>Set Active</Button>
-                                                <Button onClick={() => { deletePallette(pallettes, i), toast('Your pallets has been deleted') }}>Delete</Button>
+                                                <Button onClick={() => { setActive(pallettes), toast('Your pallette is now showing') }}>Set Active</Button>
+                                                <Button onClick={() => { deletePallette(pallettes, i), toast('Your pallette has been deleted') }}>Delete</Button>
                                             </div>
                                         </ColorGroup>
                                         <div className={mypalletsStyle.buttonsDownUnderWrapper}>
@@ -76,8 +76,8 @@ export function MyPallettes() {
                                                 <div style={{ background: `linear-gradient(to right, #bab393, #f1e5c1, #d0753c, #5e3326, #2d2a23)` }} className={mypalletsStyle.bgLine} />
                                             }
                                             <div className={mypalletsStyle.buttonsDownUnder}>
-                                                <Button onClick={() => { setActive(pallettes), toast('Your pallets is know showing') }}>Set Active</Button>
-                                                <Button onClick={() => { deletePallette(pallettes, i), toast('Your pallets has been deleted') }}>Delete</Button>
+                                                <Button onClick={() => { setActive(pallettes), toast('Your pallette is now showing') }}>Set Active</Button>
+                                                <Button onClick={() => { deletePallette(pallettes, i), toast('Your pallette has been deleted') }}>Delete</Button>
                                             </div>
                                         </div>
                                         <hr className={i !== JSON.parse(localStorage.getItem('userPallettes')!).length - 1 ? mypalletsStyle.lineFull : mypalletsStyle.lineNone} />

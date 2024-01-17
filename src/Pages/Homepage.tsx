@@ -34,8 +34,6 @@ export function Homepage({ title }: { title: string }) {
         setActivePallette(allResultsHex)
         setGeneratedPallette(allResultsHex)
 
-        toast('Your new pallets is here')
-
         localStorage.setItem('generatedPallette', JSON.stringify(allResultsHex))
         localStorage.setItem('activePallette', JSON.stringify(allResultsHex))
         return data;
@@ -46,7 +44,7 @@ export function Homepage({ title }: { title: string }) {
         if (localStorage.getItem('userPallettes')) {
             const localPallettesJSON = JSON.parse(localStorage.getItem('userPallettes')!)
             
-            toast('The Pallettes has been saved')
+            toast('The pallette has been saved')
 
             const doesItExist = localPallettesJSON.some((palette: Array<Array<string>>) => JSON.stringify(palette) === JSON.stringify(generatedPallette))
 

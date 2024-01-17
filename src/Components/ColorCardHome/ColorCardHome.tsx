@@ -5,7 +5,6 @@ const ColorCard = ({ color, copytext }: { color: string, copytext: boolean }) =>
     
     const handleCopy = () => {
         navigator.clipboard.writeText(color)
-        // alert("Copied the text: " + color);
     }
     
     return (
@@ -24,7 +23,8 @@ const ColorCard = ({ color, copytext }: { color: string, copytext: boolean }) =>
                             <img src="clipboard.png" alt="Copy" />
                         </button>
                         :
-                        <button onClick={() => handleCopy()} className={style.copyNoText}>
+                        <button onClick={() => {handleCopy(), toast('The color has been copied')
+                    }} className={style.copyNoText}>
                             <img src="clipboard.png" alt="Copy" />
                         </button>
                     }
