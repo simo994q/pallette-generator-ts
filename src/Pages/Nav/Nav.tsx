@@ -25,7 +25,7 @@ export function Navigation() {
                 <ul>
                     <Link to='/'><Button styleProps={{ width: '100px', }} >Generate</Button></Link>
                     <Link to='/mypallettes'><Button styleProps={{ width: '100px' }}>Saved</Button></Link>
-                    <Link to='/testPage'><Button styleProps={{ width: '200px' }}>Test your pallettes here</Button></Link>
+                    <Link to='/testPage'><Button styleProps={{ width: '100px' }}>Test site</Button></Link>
                 </ul>
             </nav>
         </section>
