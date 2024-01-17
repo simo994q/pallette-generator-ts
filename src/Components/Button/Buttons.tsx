@@ -21,9 +21,6 @@ export function Button({ children, onClick, styleProps }: ButtonProps) {
                     <button className={buttonsStyle.button}>{children}</button>
                 </div>
             }
-            {/* <div className={buttonsStyle.moduleBorderWrap} style={{ ...gradTest, ...styleProps }} onClick={onClick}>
-                <button className={buttonsStyle.button}>{children}</button>
-            </div> */}
         </>
     )
 }

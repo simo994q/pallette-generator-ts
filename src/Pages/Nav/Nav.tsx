@@ -28,6 +28,11 @@ export function Navigation() {
                     <Link to='/testPage'><Button styleProps={{ width: '100px' }}>Test site</Button></Link>
                 </ul>
             </nav>
+            {localStorage.getItem('activePallette') ?
+                <div style={{ background: `linear-gradient(to right, ${JSON.parse(localStorage.getItem('activePallette')!)[0]}, ${JSON.parse(localStorage.getItem('activePallette')!)[1]}, ${JSON.parse(localStorage.getItem('activePallette')!)[2]}, ${JSON.parse(localStorage.getItem('activePallette')!)[3]}, ${JSON.parse(localStorage.getItem('activePallette')!)[4]})` }} className={navStyle.borderDiv}/>
+                :
+                <div style={{ background: `linear-gradient(to right, #bab393, #f1e5c1, #d0753c, #5e3326, #2d2a23)` }} className={navStyle.borderDiv}/>
+            }
         </section>
     )
 }

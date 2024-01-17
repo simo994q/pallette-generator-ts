@@ -17,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MainLayout />} >
               <Route index element={<Homepage title={"Your new colors"} />} />
-              <Route path="/mypallettes" element={<MyPallettes title={'My Pallettes'} />} />
+              <Route path="/mypallettes" element={<MyPallettes />} />
               <Route path="/testpage" element={<TestPage title={'Test page'} />} />
             </Route>
           </Routes>
@@ -26,8 +26,7 @@ function App() {
       <ToastContainer
         position="bottom-right"
         autoClose={2000}
-        limit={2}
-        hideProgressBar={false}
+        hideProgressBar={true}
         newestOnTop={false}
         closeOnClick
         rtl={false}
@@ -35,7 +34,7 @@ function App() {
         draggable
         pauseOnHover
         theme="dark"
-        transition:Bounce/>
+      />
     </>
   )
 }
