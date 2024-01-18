@@ -3,7 +3,7 @@ import { TestForm } from './Components/Form/Form'
 import testPageStyle from './Testpage.module.scss'
 import { PieChart } from './Components/PieChart/PieChart'
 
-export function TestPage({ title }: { title: string }) {
+export function TestPage() {
 
 
     return (
@@ -11,10 +11,10 @@ export function TestPage({ title }: { title: string }) {
         <section className={testPageStyle.testPage}>
 
             <h1>Your cool webside Heading</h1>
-            
+
             <TestCard />
-            <TestForm/>
-            <PieChart/>
+            <TestForm />
+            <PieChart />
         </section>
     )
 }

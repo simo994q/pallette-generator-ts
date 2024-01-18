@@ -1,8 +1,8 @@
 .pieBody {
 
-    height: 400px;
+    min-width: 300px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -51,20 +51,6 @@
 
 
 @media (max-width: 360px) {
-    .pieBody {
-        flex-direction: column;
-    }
-
-}
-
-@media (max-width: 500px) {
-    .pieBody {
-        flex-direction: column;
-    }
-
-}
-
-@media (max-width: 700px) {
     .pieBody {
         flex-direction: column;
     }
