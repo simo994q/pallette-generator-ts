@@ -9,6 +9,7 @@ const ColorCard = ({ color, copytext }: { color: string, copytext: boolean }) =>
     
     return (
         <>
+
             <div className={style.wrapper}>
                 <div className={style.color} style={{ backgroundColor: color }}>
                 </div>
